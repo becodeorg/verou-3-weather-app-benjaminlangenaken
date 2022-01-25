@@ -58,23 +58,35 @@ const handleForm = (event) => {
                         todayAddOne: weekDays[today + 1],
                         todayAddTwo: weekDays[today + 2],
                         todayAddThree: weekDays[today + 3],
-                        todayAddFour: weekDays[today + 4]
+                        todayAddFour: weekDays[today + 4],
                     }
 
-                    const h1Today = document.querySelector(".today");
+                    const h1Today = document.querySelector("h1.today");
                     h1Today.innerHTML = weatherFive.today;
+                    const todayTemp = document.querySelector("h2.todaytemp");
+                    todayTemp.innerHTML = `${Math.floor(data.daily[0].temp.day)}°C`;
 
-                    const h1TodayAddOne = document.querySelector(".todayaddone");
+                    const h1TodayAddOne = document.querySelector("h1.todayaddone");
                     h1TodayAddOne.innerHTML = weatherFive.todayAddOne;
+                    const todayAddOneTemp = document.querySelector("h2.todayaddonetemp");
+                    todayAddOneTemp.innerHTML = `${Math.floor(data.daily[1].temp.day)}°C`;
 
-                    const h1TodayAddTwo = document.querySelector(".todayaddtwo");
+                    const h1TodayAddTwo = document.querySelector("h1.todayaddtwo");
                     h1TodayAddTwo.innerHTML = weatherFive.todayAddTwo;
+                    const todayAddTwoTemp = document.querySelector("h2.todayaddtwotemp");
+                    todayAddTwoTemp.innerHTML = `${Math.floor(data.daily[2].temp.day)}°C`;
 
-                    const h1TodayAddThree = document.querySelector(".todayaddthree");
+                    const h1TodayAddThree = document.querySelector("h1.todayaddthree");
                     h1TodayAddThree.innerHTML = weatherFive.todayAddThree;
+                    const todayAddThreeTemp = document.querySelector("h2.todayaddthreetemp");
+                    todayAddThreeTemp.innerHTML = `${Math.floor(data.daily[3].temp.day)}°C`;
 
-                    const h1TodayAddFour = document.querySelector(".todayaddfour");
+                    const h1TodayAddFour = document.querySelector("h1.todayaddfour");
                     h1TodayAddFour.innerHTML = weatherFive.todayAddFour;
+                    const todayAddFourTemp = document.querySelector("h2.todayaddfourtemp");
+                    todayAddFourTemp.innerHTML = `${Math.floor(data.daily[4].temp.day)}°C`;
+
+                    console.log(data);
                 })
         })
 }
