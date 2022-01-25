@@ -11,12 +11,29 @@
 
 <body>
     <main>
-        <form action="" class="cityform">
-            <label for="city">City:</label>
-            <input type="text" id="city" placeholder="Check weather for which city?">
-            <button>Submit</button>
-        </form>
+        <div class="container flex">
+            <form action="" class="cityform">
+                <label for="city">City:</label>
+                <input type="text" id="city" placeholder="Check weather for which city?">
+                <button class="btn">Submit</button>
+            </form>
+        </div>
+        <div class="container flex">
+            <div class="container weathernow">
+                <h1 class="name"></h1>
+                <h2 class="temp"></h2>
+                <p class="descr"></p>
+            </div>
+            <div class="container weatherfivedays">
+                <h1 class="today"></h1>
+                <h1 class="todayaddone"></h1>
+                <h1 class="todayaddtwo"></h1>
+                <h1 class="todayaddthree"></h1>
+                <h1 class="todayaddfour"></h1>
+            </div>
+        </div>
     </main>
+
     <script src="./config.js"></script>
     <script src="./script.js"></script>
 </body>
