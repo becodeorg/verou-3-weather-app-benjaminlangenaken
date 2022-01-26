@@ -106,10 +106,90 @@ img {
     visibility: visible;
 }
 
+.btn:hover {
+    transform: scale(0.95);
+    transition-duration: 0.3s;
+}
+
 label {
     font-size: 1.5rem;
     font-weight: 500;
     line-height: 1.2;
     margin: 20px 10px;
     color: var(--dark-color);
+}
+
+/* Mobile responsiveness */
+@media(max-width: 500px) {
+    body {
+        display: flex;
+        justify-content: center;
+    }
+
+    .container {
+        margin: 5px;
+        padding: 2px;
+        text-align: center;
+    }
+
+    .weatherfivedays {
+        flex-direction: column;
+        padding: 0;
+        margin: 0;
+    }
+
+    .flex.dayone,
+    .daytwo,
+    .daythree,
+    .dayfour,
+    .dayfive {
+        flex-direction: row;
+        margin: 10px 0;
+        justify-content: space-between;
+    }
+
+    h1, 
+    h2, 
+    p {
+        margin: 0 5px;
+        padding: 0;
+    }
+
+    h1 {
+        font-size: 1.2rem;
+    }
+
+    h1.name {
+        font-size: 1.8rem;
+    }
+
+    h2 {
+        font-size: 1rem;
+    }
+
+    p {
+        font-size: 0.8rem;
+    }
+
+    img {
+        width: 20vw;
+    }
+
+    .btn {
+        display: inline-block;
+        font-size: 1rem;
+        padding: 10px;
+    }
+    label {
+        font-size: 1rem;
+        font-weight: 500;
+        line-height: 1.2;
+        margin: 20px 10px;
+        color: var(--dark-color);
+    }
+
+    input#city {
+        width: 60vw;
+        font-size: 1rem;
+    }
 }
