@@ -54,37 +54,37 @@ const handleForm = (event) => {
                     }
 
                     const weatherFive = {
-                        today: "Today",
-                        todayAddOne: weekDays[today + 1],
-                        todayAddTwo: weekDays[today + 2],
-                        todayAddThree: weekDays[today + 3],
-                        todayAddFour: weekDays[today + 4],
+                        dayOne: "Today",
+                        dayTwo: weekDays[today + 1],
+                        dayThree: weekDays[today + 2],
+                        dayFour: weekDays[today + 3],
+                        dayFive: weekDays[today + 4],
                     }
 
-                    const h1Today = document.querySelector("h1.today");
-                    h1Today.innerHTML = weatherFive.today;
-                    const todayTemp = document.querySelector("h2.todaytemp");
-                    todayTemp.innerHTML = `${Math.floor(data.daily[0].temp.day)}°C`;
+                    const h1DayOne = document.querySelector("h1.dayone");
+                    h1DayOne.innerHTML = weatherFive.dayOne;
+                    const dayOneTemp = document.querySelector("h2.dayonetemp");
+                    dayOneTemp.innerHTML = `${Math.floor(data.daily[0].temp.day)}°C`;
 
-                    const h1TodayAddOne = document.querySelector("h1.todayaddone");
-                    h1TodayAddOne.innerHTML = weatherFive.todayAddOne;
-                    const todayAddOneTemp = document.querySelector("h2.todayaddonetemp");
-                    todayAddOneTemp.innerHTML = `${Math.floor(data.daily[1].temp.day)}°C`;
+                    const h1DayTwo = document.querySelector("h1.daytwo");
+                    h1DayTwo.innerHTML = weatherFive.dayTwo;
+                    const dayTwoTemp = document.querySelector("h2.daytwotemp");
+                    dayTwoTemp.innerHTML = `${Math.floor(data.daily[1].temp.day)}°C`;
 
-                    const h1TodayAddTwo = document.querySelector("h1.todayaddtwo");
-                    h1TodayAddTwo.innerHTML = weatherFive.todayAddTwo;
-                    const todayAddTwoTemp = document.querySelector("h2.todayaddtwotemp");
-                    todayAddTwoTemp.innerHTML = `${Math.floor(data.daily[2].temp.day)}°C`;
+                    const h1DayThree = document.querySelector("h1.daythree");
+                    h1DayThree.innerHTML = weatherFive.dayThree;
+                    const dayThreeTemp = document.querySelector("h2.daythreetemp");
+                    dayThreeTemp.innerHTML = `${Math.floor(data.daily[2].temp.day)}°C`;
 
-                    const h1TodayAddThree = document.querySelector("h1.todayaddthree");
-                    h1TodayAddThree.innerHTML = weatherFive.todayAddThree;
-                    const todayAddThreeTemp = document.querySelector("h2.todayaddthreetemp");
-                    todayAddThreeTemp.innerHTML = `${Math.floor(data.daily[3].temp.day)}°C`;
+                    const h1DayFour = document.querySelector("h1.dayfour");
+                    h1DayFour.innerHTML = weatherFive.dayFour;
+                    const dayFourTemp = document.querySelector("h2.dayfourtemp");
+                    dayFourTemp.innerHTML = `${Math.floor(data.daily[3].temp.day)}°C`;
 
-                    const h1TodayAddFour = document.querySelector("h1.todayaddfour");
-                    h1TodayAddFour.innerHTML = weatherFive.todayAddFour;
-                    const todayAddFourTemp = document.querySelector("h2.todayaddfourtemp");
-                    todayAddFourTemp.innerHTML = `${Math.floor(data.daily[4].temp.day)}°C`;
+                    const h1DayFive = document.querySelector("h1.dayfive");
+                    h1DayFive.innerHTML = weatherFive.dayFive;
+                    const dayFiveTemp = document.querySelector("h2.dayfivetemp");
+                    dayFiveTemp.innerHTML = `${Math.floor(data.daily[4].temp.day)}°C`;
 
                     console.log(data);
                 })
