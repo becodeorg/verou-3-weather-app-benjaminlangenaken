@@ -182,12 +182,18 @@ label {
         font-size: 1rem;
         font-weight: 500;
         line-height: 1.2;
-        margin: 20px 10px;
+        margin: 10px;
         color: var(--dark-color);
     }
 
     input#city {
-        width: 60vw;
+        width: 50vw;
         font-size: 1rem;
+        margin: 5px;
+    }
+
+    .header {
+        margin-top: 20px;
+        justify-content: space-between;
     }
 }
