@@ -34,15 +34,43 @@ h1, h2 {
     font-size: 1.8rem;
     font-weight: 500;
     line-height: 1.2;
-    margin: 20px 0;
-    padding: 0 20px;
+    margin: 10px 0;
+    color: var(--dark-color);
+}
+
+p {
+    font-size: 1.2rem;
+    font-weight: 400;
+    line-height: 1;
+    margin: 10px 0;
     color: var(--dark-color);
 }
 
 .weatherfivedays {
     display: flex;
     flex-direction: row;
-    flex-wrap: wrap;
+}
+
+input#city {
+    width: 400px;
+    font-size: 1.5rem;
+    font-weight: 500;
+    line-height: 1.2;
+    padding: 3px;
+    margin: 20px 10px;
+    background: var(--light-color);
+    color: var(--dark-color);
+    border: 0;
+    border-bottom: 1px var(--dark-color) solid;
+}
+
+input#city:focus {
+    background: var(--light-color);
+    outline: none;
+}
+
+img {
+    width: 50%; /*Keep images within container (take 100% of container width)*/
 }
 
 
@@ -52,17 +80,12 @@ h1, h2 {
     max-width: 1400px;
     margin: 0 auto; /*Stretch beyond 1100px --> container will stay at 1100 px*/
     overflow: auto; /*Remove 10px margin height defined for h1*/
-    padding: 20px;
+    padding: 10px;
     text-align: center;
     overflow: hidden;
 }
 
 .flex {
-    display: flex;
-    flex-direction: column;
-}
-
-.flex-center {
     display: flex;
     flex-direction: column;
     justify-content: space-evenly; 
@@ -89,22 +112,4 @@ label {
     line-height: 1.2;
     margin: 20px 10px;
     color: var(--dark-color);
-}
-
-input#city {
-    width: 400px;
-    font-size: 1.5rem;
-    font-weight: 500;
-    line-height: 1.2;
-    padding: 3px;
-    margin: 20px 10px;
-    background: var(--light-color);
-    color: var(--dark-color);
-    border: 0;
-    border-bottom: 1px var(--dark-color) solid;
-}
-
-input#city:focus {
-    background: var(--light-color);
-    outline: none;
 }

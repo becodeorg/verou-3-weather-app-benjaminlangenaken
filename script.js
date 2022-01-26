@@ -122,8 +122,23 @@ const handleForm = (event) => {
                     const dayFiveDescr = document.querySelector("p.dayfivedescr");
                     dayFiveDescr.innerHTML = data.daily[4].weather[0].description;
 
-                    console.log(data);
+                    // Add weather icons future days
+                    const imageOne = document.querySelector("img.dayone");
+                    imageOne.src = icons[data.daily[0].weather[0].icon];
 
+                    const imageTwo = document.querySelector("img.daytwo");
+                    imageTwo.src = icons[data.daily[1].weather[0].icon];
+
+                    const imageThree = document.querySelector("img.daythree");
+                    imageThree.src = icons[data.daily[2].weather[0].icon];
+
+                    const imageFour = document.querySelector("img.dayfour");
+                    imageFour.src = icons[data.daily[3].weather[0].icon];
+
+                    const imageFive = document.querySelector("img.dayfive");
+                    imageFive.src = icons[data.daily[4].weather[0].icon];
+
+                    console.log(data);
                 })
         })
 }
