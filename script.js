@@ -65,26 +65,36 @@ const handleForm = (event) => {
                     h1DayOne.innerHTML = weatherFive.dayOne;
                     const dayOneTemp = document.querySelector("h2.dayonetemp");
                     dayOneTemp.innerHTML = `${Math.floor(data.daily[0].temp.day)}°C`;
+                    const dayOneDescr = document.querySelector("p.dayonedescr");
+                    dayOneDescr.innerHTML = data.daily[0].weather[0].description;
 
                     const h1DayTwo = document.querySelector("h1.daytwo");
                     h1DayTwo.innerHTML = weatherFive.dayTwo;
                     const dayTwoTemp = document.querySelector("h2.daytwotemp");
                     dayTwoTemp.innerHTML = `${Math.floor(data.daily[1].temp.day)}°C`;
+                    const dayTwoDescr = document.querySelector("p.daytwodescr");
+                    dayTwoDescr.innerHTML = data.daily[1].weather[0].description;
 
                     const h1DayThree = document.querySelector("h1.daythree");
                     h1DayThree.innerHTML = weatherFive.dayThree;
                     const dayThreeTemp = document.querySelector("h2.daythreetemp");
                     dayThreeTemp.innerHTML = `${Math.floor(data.daily[2].temp.day)}°C`;
+                    const dayThreeDescr = document.querySelector("p.daythreedescr");
+                    dayThreeDescr.innerHTML = data.daily[2].weather[0].description;
 
                     const h1DayFour = document.querySelector("h1.dayfour");
                     h1DayFour.innerHTML = weatherFive.dayFour;
                     const dayFourTemp = document.querySelector("h2.dayfourtemp");
                     dayFourTemp.innerHTML = `${Math.floor(data.daily[3].temp.day)}°C`;
+                    const dayFourDescr = document.querySelector("p.dayfourdescr");
+                    dayFourDescr.innerHTML = data.daily[3].weather[0].description;
 
                     const h1DayFive = document.querySelector("h1.dayfive");
                     h1DayFive.innerHTML = weatherFive.dayFive;
                     const dayFiveTemp = document.querySelector("h2.dayfivetemp");
                     dayFiveTemp.innerHTML = `${Math.floor(data.daily[4].temp.day)}°C`;
+                    const dayFiveDescr = document.querySelector("p.dayfivedescr");
+                    dayFiveDescr.innerHTML = data.daily[4].weather[0].description;
 
                     console.log(data);
                 })
