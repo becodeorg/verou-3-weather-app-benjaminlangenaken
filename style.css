@@ -1,10 +1,10 @@
 @import url('https://fonts.googleapis.com/css2?family=Open+Sans&display=swap');
 
 :root {
-    --primary-color: #2a9d8f;
-    --secondary-color: #e76f51;
-    --dark-color: #264653;
-    --light-color: #f8edeb;
+    --primary-color: #83c5be;
+    --secondary-color: #ffddd2;
+    --dark-color: #1d3557;
+    --light-color: #f8f9fa;
     --font: 'Open Sans', sans-serif;
 }
 
@@ -91,15 +91,20 @@ label {
     color: var(--dark-color);
 }
 
-input {
+input#city {
     width: 400px;
     font-size: 1.5rem;
     font-weight: 500;
     line-height: 1.2;
     padding: 3px;
     margin: 20px 10px;
-    background-color: #f8edeb;
+    background: var(--light-color);
     color: var(--dark-color);
     border: 0;
-    border-bottom: 1px #264653 solid;
+    border-bottom: 1px var(--dark-color) solid;
+}
+
+input#city:focus {
+    background: var(--light-color);
+    outline: none;
 }

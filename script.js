@@ -25,6 +25,7 @@ const handleForm = (event) => {
                     // Current weather:
                     const weatherNow = {
                         Descr: data.current.weather[0].description,
+                        Icon: data.current.weather[0].icon,
                         Temp: `${Math.floor(data.current.temp)}°C`,
                     }
 
@@ -33,6 +34,31 @@ const handleForm = (event) => {
 
                     const pDescr = document.querySelector(".descr");
                     pDescr.innerHTML = weatherNow.Descr;
+
+                    //Add weather icon:
+                    const icons = {
+                        "01d": "./images/sun_clear.svg",
+                        "02d": "./images/sun_cloud.svg",
+                        "03d": "./images/cloud_clouds.svg",
+                        "04d": "./images/cloud_clouds.svg",
+                        "09d": "./images/cloud_rain_large.svg",
+                        "10d": "./images/sun_cloud_rain.svg",
+                        "11d": "./images/cloud_storm.svg",
+                        "13d": "./images/cloud_snow.svg",
+                        "50d": "./images/cloud_fog.svg",
+                        "01n": "./images/moon_clear.svg",
+                        "02n": "./images/moon_cloud.svg",
+                        "03n": "./images/cloud_clouds.svg",
+                        "04n": "./images/cloud_clouds.svg",
+                        "09n": "./images/cloud_rain_large.svg",
+                        "10n": "./images/moon_cloud_rain.svg",
+                        "11n": "./images/moon_cloud_storm.svg",
+                        "13n": "./images/moon_cloud_snow.svg",
+                        "50n": "./images/moon_cloud_fog.svg",
+                    }
+
+                    const image = document.querySelector("img");
+                    image.src = icons[weatherNow.Icon];
 
                     // Next five days:
                     const fiveDays = document.querySelector(".weatherfivedays");
@@ -97,6 +123,7 @@ const handleForm = (event) => {
                     dayFiveDescr.innerHTML = data.daily[4].weather[0].description;
 
                     console.log(data);
+
                 })
         })
 }
