@@ -5,7 +5,7 @@ const handleForm = (event) => {
     event.preventDefault();
 
     const newCity = event.target.city.value;
-    const key = config.apiKey;
+    // const key = config.apiKey;
 
     // API call
     const getData = fetch(`https://api.openweathermap.org/data/2.5/forecast?q=${newCity}&appid=${key}&units=metric&cnt=5`)
