@@ -176,6 +176,10 @@ label {
         justify-items: center;
     }
 
+    .flex.header {
+        margin: 15px 5px;
+    }
+
     .flex.dayone,
     .flex.daytwo,
     .flex.daythree,
@@ -235,7 +239,7 @@ label {
 
     .btn {
         display: inline-block;
-        font-size: 1.1rem;
+        font-size: 1rem;
         padding: 5px 10px;
     }
     label {
@@ -248,10 +252,10 @@ label {
     }
 
     input#city {
-        width: 60vw;
-        font-size: 1.1rem;
+        width: 65vw;
+        font-size: 0.95rem;
         margin: 5px;
-        padding: 5px;
+        padding: 5px 0px;
         border: none;
         border-bottom: 1px var(--dark-color) solid;
         box-shadow: none;
