@@ -79,6 +79,7 @@ img {
 .flex.daythree,
 .flex.dayfour,
 .flex.dayfive {
+    width: 200px;
     background-color: var(--secondary-color);
     border-radius: 10px;
     margin: 10px;
@@ -138,14 +139,19 @@ label {
     }
 
     .container {
-        margin: 5px;
+        margin: 10px 10px;
         padding: 2px;
+    }
+
+    .container.weathernow {
+        margin: 0px 10px 20px 10px;
+        padding: 5px;
     }
 
     .container.weatherfivedays {
         flex-direction: column;
         padding: 0 20px;
-        margin: 20px 5px;
+        margin: 5px;
         background-color: var(--secondary-color);
         border-radius: 10px;
     }
@@ -155,6 +161,7 @@ label {
     .flex.daythree,
     .flex.dayfour,
     .flex.dayfive {
+        width: 75vw;
         display: flex;
         flex-direction: row;
         padding: 15px 0;
@@ -200,20 +207,21 @@ label {
     .btn {
         display: inline-block;
         font-size: 1rem;
-        padding: 10px;
+        padding: 5px 10px;
     }
     label {
         font-size: 1rem;
         font-weight: 500;
         line-height: 1.2;
-        margin: 10px;
+        margin: 0px;
         color: var(--dark-color);
     }
 
     input#city {
         width: 50vw;
-        font-size: 1rem;
-        margin: 5px;
+        font-size: 0.7rem;
+        margin: 10px;
+        padding: px;
     }
 
     .header {
