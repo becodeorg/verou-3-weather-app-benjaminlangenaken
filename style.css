@@ -15,6 +15,7 @@
 }
 
 body {
+    width: 100vw;
     font-family: var(--font);
     font-weight: 400;
     background-color: var(--light-color);
@@ -67,9 +68,16 @@ input#city:focus {
 }
 
 img {
-    width: 65%; /*Keep images within container (take 100% of container width)*/
+    width: 200px; /*Keep images within container (take 100% of container width)*/
 }
 
+img.dayone,
+img.daytwo,
+img.daythree,
+img.dayfour,
+img.dayfive {
+    width: 100px;
+}
 
 .container.weatherfivedays {
     width: 100%;
@@ -139,10 +147,9 @@ label {
 }
 
 /* Mobile responsiveness */
-@media(max-width: 500px) {
+@media(max-width: 770px) {
     body {
         display: flex;
-        justify-content: center;
     }
 
     .container {
@@ -228,7 +235,7 @@ label {
 
     .btn {
         display: inline-block;
-        font-size: 1rem;
+        font-size: 1.1rem;
         padding: 5px 10px;
     }
     label {
@@ -242,7 +249,7 @@ label {
 
     input#city {
         width: 60vw;
-        font-size: 1rem;
+        font-size: 1.1rem;
         margin: 5px;
         padding: 5px;
         border: none;
