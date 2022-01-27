@@ -67,7 +67,7 @@ input#city:focus {
 }
 
 img {
-    width: 50%; /*Keep images within container (take 100% of container width)*/
+    width: 65%; /*Keep images within container (take 100% of container width)*/
 }
 
 
@@ -215,6 +215,14 @@ label {
     }
 
     img {
+        width: 30vw;
+    }
+
+    img.dayone,
+    img.daytwo,
+    img.daythree,
+    img.dayfour,
+    img.dayfive {
         width: 15vw;
     }
 
@@ -240,6 +248,7 @@ label {
         border: none;
         border-bottom: 1px var(--dark-color) solid;
         box-shadow: none;
+        border-radius: 0;
     }
 
     .header {
