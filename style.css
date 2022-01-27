@@ -180,6 +180,7 @@ label {
         padding: 20px 0px;
         margin: 0;
         justify-content: space-between;
+        align-content: center;
         background-color: var(--secondary-color);
         box-shadow: none;
         border-bottom: 1px var(--dark-color) solid;
@@ -193,7 +194,7 @@ label {
     h1, 
     h2, 
     p {
-        margin: 0 5px;
+        margin: 0;
         padding: 0;
     }
 
@@ -235,7 +236,10 @@ label {
         width: 60vw;
         font-size: 1rem;
         margin: 5px;
-        padding: px;
+        padding: 5px;
+        border: none;
+        border-bottom: 1px var(--dark-color) solid;
+        box-shadow: none;
     }
 
     .header {
