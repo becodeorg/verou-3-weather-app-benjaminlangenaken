@@ -44,11 +44,6 @@ p {
     color: var(--dark-color);
 }
 
-.weatherfivedays {
-    display: flex;
-    flex-direction: row;
-}
-
 input#city {
     width: 400px;
     font-size: 1.5rem;
@@ -71,6 +66,24 @@ img {
     width: 50%; /*Keep images within container (take 100% of container width)*/
 }
 
+
+.container.weatherfivedays {
+    display: flex;
+    flex-direction: row;
+    padding: 50px;
+    visibility: hidden;
+}
+
+.flex.dayone,
+.flex.daytwo,
+.flex.daythree,
+.flex.dayfour,
+.flex.dayfive {
+    background-color: var(--secondary-color);
+    border-radius: 10px;
+    margin: 10px;
+    box-shadow: #adb5bd 0px 1px 3px;
+}
 
 /* Utilities styling */
 
@@ -101,7 +114,7 @@ img {
     border-radius: 5px;
     font-family: var(--font);
     font-weight: bold;
-    visibility: visible;
+    box-shadow: #adb5bd 0px 1px 3px;
 }
 
 .btn:hover {
@@ -127,23 +140,34 @@ label {
     .container {
         margin: 5px;
         padding: 2px;
-        text-align: center;
     }
 
-    .weatherfivedays {
+    .container.weatherfivedays {
         flex-direction: column;
-        padding: 0;
-        margin: 0;
+        padding: 0 20px;
+        margin: 20px 5px;
+        background-color: var(--secondary-color);
+        border-radius: 10px;
     }
 
     .flex.dayone,
-    .daytwo,
-    .daythree,
-    .dayfour,
-    .dayfive {
+    .flex.daytwo,
+    .flex.daythree,
+    .flex.dayfour,
+    .flex.dayfive {
+        display: flex;
         flex-direction: row;
-        margin: 10px 0;
+        padding: 15px 0;
+        margin: 0;
         justify-content: space-between;
+        background-color: var(--secondary-color);
+        box-shadow: none;
+        border-bottom: 1px var(--dark-color) solid;
+        border-radius: 0px;
+    }
+
+    .flex.dayfive {
+        border-bottom: none;
     }
 
     h1, 

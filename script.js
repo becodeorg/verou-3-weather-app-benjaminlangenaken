@@ -5,9 +5,10 @@ const handleForm = (event) => {
     event.preventDefault();
 
     const newCity = event.target.city.value;
+    const key = config.apiKey;
 
     // API call
-    const getData = fetch(`https://api.openweathermap.org/data/2.5/forecast?q=${newCity}&appid=${config.apiKey}&units=metric&cnt=5`)
+    const getData = fetch(`https://api.openweathermap.org/data/2.5/forecast?q=${newCity}&appid=${key}&units=metric&cnt=5`)
         .then(response => response.json())
         .then(data => {
 
@@ -18,7 +19,7 @@ const handleForm = (event) => {
             const h1Name = document.querySelector(".name");
             h1Name.innerHTML = name;
 
-            const getData = fetch(`https://api.openweathermap.org/data/2.5/onecall?lat=${lat}&lon=${lon}&exclude=minutely,hourly,alerts&appid=${config.apiKey}&units=metric`)
+            const getData = fetch(`https://api.openweathermap.org/data/2.5/onecall?lat=${lat}&lon=${lon}&exclude=minutely,hourly,alerts&appid=${key}&units=metric`)
                 .then(response => response.json())
                 .then(data => {
 
@@ -86,6 +87,8 @@ const handleForm = (event) => {
                         dayFour: weekDays[today + 3],
                         dayFive: weekDays[today + 4],
                     }
+
+                    fiveDays.style.visibility = "visible";
 
                     const h1DayOne = document.querySelector("h1.dayone");
                     h1DayOne.innerHTML = weatherFive.dayOne;
