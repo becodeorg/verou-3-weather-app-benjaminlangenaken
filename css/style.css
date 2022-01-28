@@ -117,8 +117,8 @@ img.dayfive {
     display: flex;
     flex-direction: column;
     align-items: center;
-    align-content: space-around;
-    justify-content: center;
+    justify-content: space-evenly;
+    text-align: center;
 }
 
 .flex.dayone:hover .hover,
@@ -149,44 +149,49 @@ img.dayfive {
     }
 }
 
-img.raindrop {
-    width: 40px;
-    padding: 10px 0;
-}
-
+img.raindrop,
 img.sunrise,
 img.sunset {
     width: 40px;
-    padding: 10px 0;
 }
 
+p.humidity {
+    color: var(--light-color);
+    margin: 0 0 10px 0;
+}
 
-p.humidity,
 p.min,
 p.max {
     color: var(--light-color);
-    padding: 10px 0;
+    margin: 0;
 }
 
 span.raindrop,
 span.rainchance,
 span.humidity,
 span.min,
-span.max,
-span.sunrise,
-span.sunset {
+span.max {
     color: var(--light-color);
     margin: 0 5px;
     font-weight: 500;
 }
 
 span.min {
-    margin-right: 2vw;
+    margin: 0 15px 0 5px;
 }
 
-span.sunrise {
+span.sunrise,
+span.sunset {
+    color: var(--light-color);
     margin: 0;
-    margin-right: 0.5vw;
+    font-weight: 500;
+}
+
+.flex.sunrise {
+    display: flex;
+    justify-content: space-evenly;
+    align-content: center;
+    width: 100%;
 }
 
 .rain,

@@ -157,7 +157,7 @@ const handleForm = (event) => {
                     const spanRaindropOne = document.querySelector("span.raindrop.one");
 
                     if (data.daily[0].rain === undefined && data.daily[0].snow === undefined) {
-                        spanRaindropOne.innerHTML = "0,00mm"
+                        spanRaindropOne.innerHTML = "0.00mm"
                     } else if (data.daily[0].snow === undefined) {
                         spanRaindropOne.innerHTML = `${data.daily[0].rain}mm`
                     } else { spanRaindropOne.innerHTML = `${data.daily[0].snow}mm` }
