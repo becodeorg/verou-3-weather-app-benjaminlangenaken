@@ -140,6 +140,48 @@ const handleForm = (event) => {
                     const imageFive = document.querySelector("img.dayfive");
                     imageFive.src = icons[data.daily[4].weather[0].icon];
 
+
+                    // Calculate sunrise & sunset time
+                    let timeCalc = (time) => {
+                        let timeStamp = time;
+                        const date = new Date(timeStamp * 1000);
+                        const hours = date.getHours();
+                        const mins = "0" + date.getMinutes();
+
+                        const formattedTime = `${hours}:${(mins.substr(-2))}`
+                        return formattedTime
+                    }
+
+
+                    // Add data on card hover (card one)
+                    const spanRaindropOne = document.querySelector("span.raindrop.one");
+
+                    if (data.daily[0].rain === undefined && data.daily[0].snow === undefined) {
+                        spanRaindropOne.innerHTML = "0,00mm"
+                    } else if (data.daily[0].snow === undefined) {
+                        spanRaindropOne.innerHTML = `${data.daily[0].rain}mm`
+                    } else { spanRaindropOne.innerHTML = `${data.daily[0].snow}mm` }
+
+                    const spanRainpercentOne = document.querySelector("span.rainchance.one");
+                    spanRainpercentOne.innerHTML = `(${data.daily[0].pop}%)`;
+
+                    const spanHumidityOne = document.querySelector("span.humidity.one");
+                    spanHumidityOne.innerHTML = `${data.daily[0].humidity}%`;
+
+                    const spanMinOne = document.querySelector("span.min.one");
+                    spanMinOne.innerHTML = `${Math.floor(data.daily[0].temp.min)}°C`;
+
+                    const spanMaxOne = document.querySelector("span.max.one");
+                    spanMaxOne.innerHTML = `${Math.floor(data.daily[0].temp.max)}°C`;
+
+                    const spanSunriseOne = document.querySelector("span.sunrise.one");
+                    const sunriseTime = timeCalc(data.daily[0].sunrise + data.timezone_offset - 3600);
+                    spanSunriseOne.innerHTML = sunriseTime;
+
+                    const spanSunsetOne = document.querySelector("span.sunset.one");
+                    const sunsetTime = timeCalc(data.daily[0].sunset + data.timezone_offset - 3600);
+                    spanSunsetOne.innerHTML = sunsetTime;
+
                     console.log(data);
                 })
         })
