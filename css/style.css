@@ -121,7 +121,11 @@ img.dayfive {
     justify-content: center;
 }
 
-.flex.dayone:hover .hover {
+.flex.dayone:hover .hover,
+.flex.daytwo:hover .hover,
+.flex.daythree:hover .hover,
+.flex.dayfour:hover .hover,
+.flex.dayfive:hover .hover {
     animation: hoverEffect 1s forwards;
 }
 

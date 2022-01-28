@@ -175,14 +175,128 @@ const handleForm = (event) => {
                     spanMaxOne.innerHTML = `${Math.floor(data.daily[0].temp.max)}°C`;
 
                     const spanSunriseOne = document.querySelector("span.sunrise.one");
-                    const sunriseTime = timeCalc(data.daily[0].sunrise + data.timezone_offset - 3600);
-                    spanSunriseOne.innerHTML = sunriseTime;
+                    const sunriseTimeOne = timeCalc(data.daily[0].sunrise + data.timezone_offset - 3600);
+                    spanSunriseOne.innerHTML = sunriseTimeOne;
 
                     const spanSunsetOne = document.querySelector("span.sunset.one");
-                    const sunsetTime = timeCalc(data.daily[0].sunset + data.timezone_offset - 3600);
-                    spanSunsetOne.innerHTML = sunsetTime;
+                    const sunsetTimeOne = timeCalc(data.daily[0].sunset + data.timezone_offset - 3600);
+                    spanSunsetOne.innerHTML = sunsetTimeOne;
 
-                    console.log(data);
+                    // Add data on card hover (card two)
+                    const spanRaindropTwo = document.querySelector("span.raindrop.two");
+
+                    if (data.daily[1].rain === undefined && data.daily[1].snow === undefined) {
+                        spanRaindropTwo.innerHTML = "0,00mm"
+                    } else if (data.daily[1].snow === undefined) {
+                        spanRaindropTwo.innerHTML = `${data.daily[1].rain}mm`
+                    } else { spanRaindropTwo.innerHTML = `${data.daily[1].snow}mm` }
+
+                    const spanRainpercentTwo = document.querySelector("span.rainchance.two");
+                    spanRainpercentTwo.innerHTML = `(${data.daily[1].pop}%)`;
+
+                    const spanHumidityTwo = document.querySelector("span.humidity.two");
+                    spanHumidityTwo.innerHTML = `${data.daily[1].humidity}%`;
+
+                    const spanMinTwo = document.querySelector("span.min.two");
+                    spanMinTwo.innerHTML = `${Math.floor(data.daily[1].temp.min)}°C`;
+
+                    const spanMaxTwo = document.querySelector("span.max.two");
+                    spanMaxTwo.innerHTML = `${Math.floor(data.daily[1].temp.max)}°C`;
+
+                    const spanSunriseTwo = document.querySelector("span.sunrise.two");
+                    const sunriseTimeTwo = timeCalc(data.daily[1].sunrise + data.timezone_offset - 3600);
+                    spanSunriseTwo.innerHTML = sunriseTimeTwo;
+
+                    const spanSunsetTwo = document.querySelector("span.sunset.two");
+                    const sunsetTimeTwo = timeCalc(data.daily[1].sunset + data.timezone_offset - 3600);
+                    spanSunsetTwo.innerHTML = sunsetTimeTwo;
+
+                    // Add data on card hover (card three)
+                    const spanRaindropThree = document.querySelector("span.raindrop.three");
+
+                    if (data.daily[2].rain === undefined && data.daily[2].snow === undefined) {
+                        spanRaindropThree.innerHTML = "0,00mm"
+                    } else if (data.daily[2].snow === undefined) {
+                        spanRaindropThree.innerHTML = `${data.daily[2].rain}mm`
+                    } else { spanRaindropThree.innerHTML = `${data.daily[2].snow}mm` }
+
+                    const spanRainpercentThree = document.querySelector("span.rainchance.three");
+                    spanRainpercentThree.innerHTML = `(${data.daily[2].pop}%)`;
+
+                    const spanHumidityThree = document.querySelector("span.humidity.three");
+                    spanHumidityThree.innerHTML = `${data.daily[2].humidity}%`;
+
+                    const spanMinThree = document.querySelector("span.min.three");
+                    spanMinThree.innerHTML = `${Math.floor(data.daily[2].temp.min)}°C`;
+
+                    const spanMaxThree = document.querySelector("span.max.three");
+                    spanMaxThree.innerHTML = `${Math.floor(data.daily[2].temp.max)}°C`;
+
+                    const spanSunriseThree = document.querySelector("span.sunrise.three");
+                    const sunriseTimeThree = timeCalc(data.daily[2].sunrise + data.timezone_offset - 3600);
+                    spanSunriseThree.innerHTML = sunriseTimeThree;
+
+                    const spanSunsetThree = document.querySelector("span.sunset.three");
+                    const sunsetTimeThree = timeCalc(data.daily[2].sunset + data.timezone_offset - 3600);
+                    spanSunsetThree.innerHTML = sunsetTimeThree;
+
+                    // Add data on card hover (card four)
+                    const spanRaindropFour = document.querySelector("span.raindrop.four");
+
+                    if (data.daily[3].rain === undefined && data.daily[3].snow === undefined) {
+                        spanRaindropFour.innerHTML = "0,00mm"
+                    } else if (data.daily[3].snow === undefined) {
+                        spanRaindropFour.innerHTML = `${data.daily[3].rain}mm`
+                    } else { spanRaindropFour.innerHTML = `${data.daily[3].snow}mm` }
+
+                    const spanRainpercentFour = document.querySelector("span.rainchance.four");
+                    spanRainpercentFour.innerHTML = `(${data.daily[3].pop}%)`;
+
+                    const spanHumidityFour = document.querySelector("span.humidity.four");
+                    spanHumidityFour.innerHTML = `${data.daily[3].humidity}%`;
+
+                    const spanMinFour = document.querySelector("span.min.four");
+                    spanMinFour.innerHTML = `${Math.floor(data.daily[3].temp.min)}°C`;
+
+                    const spanMaxFour = document.querySelector("span.max.four");
+                    spanMaxFour.innerHTML = `${Math.floor(data.daily[3].temp.max)}°C`;
+
+                    const spanSunriseFour = document.querySelector("span.sunrise.four");
+                    const sunriseTimeFour = timeCalc(data.daily[3].sunrise + data.timezone_offset - 3600);
+                    spanSunriseFour.innerHTML = sunriseTimeFour;
+
+                    const spanSunsetFour = document.querySelector("span.sunset.four");
+                    const sunsetTimeFour = timeCalc(data.daily[3].sunset + data.timezone_offset - 3600);
+                    spanSunsetFour.innerHTML = sunsetTimeFour;
+
+                    // Add data on card hover (card five)
+                    const spanRaindropFive = document.querySelector("span.raindrop.five");
+
+                    if (data.daily[4].rain === undefined && data.daily[4].snow === undefined) {
+                        spanRaindropFive.innerHTML = "0,00mm"
+                    } else if (data.daily[4].snow === undefined) {
+                        spanRaindropFive.innerHTML = `${data.daily[4].rain}mm`
+                    } else { spanRaindropFive.innerHTML = `${data.daily[4].snow}mm` }
+
+                    const spanRainpercentFive = document.querySelector("span.rainchance.five");
+                    spanRainpercentFive.innerHTML = `(${data.daily[4].pop}%)`;
+
+                    const spanHumidityFive = document.querySelector("span.humidity.five");
+                    spanHumidityFive.innerHTML = `${data.daily[4].humidity}%`;
+
+                    const spanMinFive = document.querySelector("span.min.five");
+                    spanMinFive.innerHTML = `${Math.floor(data.daily[4].temp.min)}°C`;
+
+                    const spanMaxFive = document.querySelector("span.max.five");
+                    spanMaxFive.innerHTML = `${Math.floor(data.daily[4].temp.max)}°C`;
+
+                    const spanSunriseFive = document.querySelector("span.sunrise.five");
+                    const sunriseTimeFive = timeCalc(data.daily[4].sunrise + data.timezone_offset - 3600);
+                    spanSunriseFive.innerHTML = sunriseTimeFive;
+
+                    const spanSunsetFive = document.querySelector("span.sunset.five");
+                    const sunsetTimeFive = timeCalc(data.daily[4].sunset + data.timezone_offset - 3600);
+                    spanSunsetFive.innerHTML = sunsetTimeFive;
                 })
         })
 }
