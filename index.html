@@ -6,7 +6,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Weather App</title>
-    <link rel="stylesheet" href="./style.css">
+    <link rel="stylesheet" href="./css/utilities.css">
+    <link rel="stylesheet" href="./css/style.css">
 </head>
 
 <body>
@@ -26,6 +27,20 @@
         </div>
         <div class="container weatherfivedays">
             <div class="container flex dayone">
+                <div class="hover dayone">
+                    <div class="container flex rain">
+                        <img src="./images/raindrop.png" alt="raindrop" class="raindrop"><span class="raindrop"></span>
+                        <p class="humidity">Humidity:<span class="humidity"></span></p>
+                    </div>
+                    <div class="container flex minmax">
+                        <p class="min">Min:<span class="min"></span></p>
+                        <p class="max">Max:<span class="max"></span></p>
+                    </div>
+                    <div class="container flex sunrise">
+                        <img src="./images/sunrise.png" alt="sunrise" class="sunrise"><span class="sunrise"></span>
+                        <img src="./images/sunset.png" alt="sunset" class="sunset"><span class="sunset"></span>
+                    </div>
+                </div>
                 <h1 class="dayone"></h1>
                 <img src="" alt="" class="dayone">
                 <h2 class="dayonetemp"></h2>
