@@ -121,6 +121,25 @@ img.dayfive {
     text-align: center;
 }
 
+.flex.dayone:hover,
+.flex.daytwo:hover,
+.flex.daythree:hover,
+.flex.dayfour:hover,
+.flex.dayfive:hover {
+    animation: cardEffect 0.6s forwards;
+}
+
+@keyframes cardEffect {
+    0% {
+        box-shadow: #adb5bd 0px 1px 3px;
+    }
+
+    100% {
+        transform: scale(1.06);
+        box-shadow: #adb5bd 0px 2px 8px;
+    }
+}
+
 .flex.dayone:hover .hover,
 .flex.daytwo:hover .hover,
 .flex.daythree:hover .hover,
