@@ -1,3 +1,14 @@
+// Calculate sunrise & sunset time
+let timeCalc = (time) => {
+    let timeStamp = time;
+    const date = new Date(timeStamp * 1000);
+    const hours = date.getHours();
+    const mins = "0" + date.getMinutes();
+
+    const formattedTime = `${hours}:${(mins.substr(-2))}`
+    return formattedTime
+}
+
 // Add city for API call
 const handleForm = (event) => {
     event.preventDefault();
@@ -74,84 +85,32 @@ const handleForm = (event) => {
                         9: "Tuesday",
                         10: "Wednesday",
                         11: "Thursday",
-                        12: "Friday",
                     }
 
-                    const weatherFive = {
-                        dayOne: "Today",
-                        dayTwo: weekDays[today + 1],
-                        dayThree: weekDays[today + 2],
-                        dayFour: weekDays[today + 3],
-                        dayFive: weekDays[today + 4],
-                    }
+                    const weatherFive = [
+                        "Today",
+                        weekDays[today + 1],
+                        weekDays[today + 2],
+                        weekDays[today + 3],
+                        weekDays[today + 4]
+                    ]
 
                     fiveDays.style.visibility = "visible";
 
-                    const h1DayOne = document.querySelector("h1.day0");
-                    h1DayOne.innerHTML = weatherFive.dayOne;
-                    const dayOneTemp = document.querySelector("h2.day0temp");
-                    dayOneTemp.innerHTML = `${Math.floor(data.daily[0].temp.day)}°C`;
-                    const dayOneDescr = document.querySelector("p.day0descr");
-                    dayOneDescr.innerHTML = data.daily[0].weather[0].description;
-
-                    const h1DayTwo = document.querySelector("h1.day1");
-                    h1DayTwo.innerHTML = weatherFive.dayTwo;
-                    const dayTwoTemp = document.querySelector("h2.day1temp");
-                    dayTwoTemp.innerHTML = `${Math.floor(data.daily[1].temp.day)}°C`;
-                    const dayTwoDescr = document.querySelector("p.day1descr");
-                    dayTwoDescr.innerHTML = data.daily[1].weather[0].description;
-
-                    const h1DayThree = document.querySelector("h1.day2");
-                    h1DayThree.innerHTML = weatherFive.dayThree;
-                    const dayThreeTemp = document.querySelector("h2.day2temp");
-                    dayThreeTemp.innerHTML = `${Math.floor(data.daily[2].temp.day)}°C`;
-                    const dayThreeDescr = document.querySelector("p.day2descr");
-                    dayThreeDescr.innerHTML = data.daily[2].weather[0].description;
-
-                    const h1DayFour = document.querySelector("h1.day3");
-                    h1DayFour.innerHTML = weatherFive.dayFour;
-                    const dayFourTemp = document.querySelector("h2.day3temp");
-                    dayFourTemp.innerHTML = `${Math.floor(data.daily[3].temp.day)}°C`;
-                    const dayFourDescr = document.querySelector("p.day3descr");
-                    dayFourDescr.innerHTML = data.daily[3].weather[0].description;
-
-                    const h1DayFive = document.querySelector("h1.day4");
-                    h1DayFive.innerHTML = weatherFive.dayFive;
-                    const dayFiveTemp = document.querySelector("h2.day4temp");
-                    dayFiveTemp.innerHTML = `${Math.floor(data.daily[4].temp.day)}°C`;
-                    const dayFiveDescr = document.querySelector("p.day4descr");
-                    dayFiveDescr.innerHTML = data.daily[4].weather[0].description;
-
-                    // Add weather icons future days
-                    const imageOne = document.querySelector("img.day0");
-                    imageOne.src = icons[data.daily[0].weather[0].icon];
-
-                    const imageTwo = document.querySelector("img.day1");
-                    imageTwo.src = icons[data.daily[1].weather[0].icon];
-
-                    const imageThree = document.querySelector("img.day2");
-                    imageThree.src = icons[data.daily[2].weather[0].icon];
-
-                    const imageFour = document.querySelector("img.day3");
-                    imageFour.src = icons[data.daily[3].weather[0].icon];
-
-                    const imageFive = document.querySelector("img.day4");
-                    imageFive.src = icons[data.daily[4].weather[0].icon];
-
-                    // Calculate sunrise & sunset time
-                    let timeCalc = (time) => {
-                        let timeStamp = time;
-                        const date = new Date(timeStamp * 1000);
-                        const hours = date.getHours();
-                        const mins = "0" + date.getMinutes();
-
-                        const formattedTime = `${hours}:${(mins.substr(-2))}`
-                        return formattedTime
-                    }
-
-                    // Add data on card hover
                     for (let i = 0; i <= 4; i++) {
+                        // Add card data
+                        const h1Day = document.querySelector(`h1.day${i}`);
+                        h1Day.innerHTML = weatherFive[i];
+                        const dayTemp = document.querySelector(`h2.day${i}temp`);
+                        dayTemp.innerHTML = `${Math.floor(data.daily[i].temp.day)}°C`;
+                        const dayDescr = document.querySelector(`p.day${i}descr`);
+                        dayDescr.innerHTML = data.daily[i].weather[0].description;
 
+                        // Add weather icons future days
+                        const image = document.querySelector(`img.day${i}`);
+                        image.src = icons[data.daily[i].weather[0].icon];
+
+                        // Add data on card hover
                         const spanRaindrop = document.querySelector(`span.raindrop.day${i}`);
 
                         if (data.daily[i].rain === undefined && data.daily[i].snow === undefined) {
