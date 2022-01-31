@@ -1,5 +1,4 @@
-// Calculate sunrise & sunset time
-let timeCalc = (time) => {
+const transformUnixTime = (time) => {
     let timeStamp = time;
     const date = new Date(timeStamp * 1000);
     const hours = date.getHours();
@@ -10,7 +9,6 @@ let timeCalc = (time) => {
 }
 
 const weatherIcons = (data) => {
-
     const icons = {
         "01d": "./images/sun_clear.svg",
         "02d": "./images/sun_cloud.svg",
@@ -43,7 +41,6 @@ const weatherIcons = (data) => {
 }
 
 const weatherData = (data) => {
-
     // Current weather:
     const weatherNow = {
         Descr: data.current.weather[0].description,
@@ -115,17 +112,16 @@ const weatherData = (data) => {
         spanMax.innerHTML = `${Math.floor(data.daily[0].temp.max)}°C`;
 
         const spanSunrise = document.querySelector(`span.sunrise.day${i}`);
-        const sunriseTime = timeCalc(data.daily[i].sunrise + data.timezone_offset - 3600);
+        const sunriseTime = transformUnixTime(data.daily[i].sunrise + data.timezone_offset - 3600);
         spanSunrise.innerHTML = sunriseTime;
 
         const spanSunset = document.querySelector(`span.sunset.day${i}`);
-        const sunsetTime = timeCalc(data.daily[i].sunset + data.timezone_offset - 3600);
+        const sunsetTime = transformUnixTime(data.daily[i].sunset + data.timezone_offset - 3600);
         spanSunset.innerHTML = sunsetTime;
     }
 }
 
 const secondApi = (data) => {
-
     const lat = data.city.coord.lat
     const lon = data.city.coord.lon
     const name = data.city.name
@@ -142,7 +138,6 @@ const secondApi = (data) => {
 }
 
 const firstApi = (event) => {
-
     const newCity = event.target.city.value;
 
     fetch(`https://api.openweathermap.org/data/2.5/forecast?q=${newCity}&appid=${config.apiKey}&units=metric&cnt=5`)
@@ -154,7 +149,6 @@ const firstApi = (event) => {
 
 // Add city for API call
 const handleForm = (event) => {
-
     event.preventDefault();
     firstApi(event);
 }
