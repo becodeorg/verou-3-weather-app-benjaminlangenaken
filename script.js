@@ -129,7 +129,7 @@ const secondApi = (data) => {
     const h1Name = document.querySelector(".name");
     h1Name.innerHTML = name;
 
-    const getData = fetch(`https://api.openweathermap.org/data/2.5/onecall?lat=${lat}&lon=${lon}&exclude=minutely,hourly,alerts&appid=${config.apiKey}&units=metric`)
+    fetch(`https://api.openweathermap.org/data/2.5/onecall?lat=${lat}&lon=${lon}&exclude=minutely,hourly,alerts&appid=${config.apiKey}&units=metric`)
         .then(response => response.json())
         .then(data => {
             weatherIcons(data);
