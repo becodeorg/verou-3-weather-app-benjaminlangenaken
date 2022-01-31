@@ -1,5 +1,3 @@
-const form = document.querySelector(".cityform");
-
 // Add city for API call
 const handleForm = (event) => {
     event.preventDefault();
@@ -301,4 +299,5 @@ const handleForm = (event) => {
         })
 }
 
-form.addEventListener("submit", handleForm)
+// Add eventlistener when entering city name
+addEventListener("submit", handleForm);
