@@ -9,21 +9,8 @@ let timeCalc = (time) => {
     return formattedTime
 }
 
-const weatherData = (data) => {
-    // Current weather:
-    const weatherNow = {
-        Descr: data.current.weather[0].description,
-        Icon: data.current.weather[0].icon,
-        Temp: `${Math.floor(data.current.temp)}°C`,
-    }
+const weatherIcons = (data) => {
 
-    const h2Temp = document.querySelector(".temp");
-    h2Temp.innerHTML = weatherNow.Temp;
-
-    const pDescr = document.querySelector(".descr");
-    pDescr.innerHTML = weatherNow.Descr;
-
-    //Add weather icon:
     const icons = {
         "01d": "./images/sun_clear.svg",
         "02d": "./images/sun_cloud.svg",
@@ -46,7 +33,28 @@ const weatherData = (data) => {
     }
 
     const image = document.querySelector("img");
-    image.src = icons[weatherNow.Icon];
+    const iconCurrent = data.current.weather[0].icon;
+    image.src = icons[iconCurrent];
+
+    for (let i = 0; i <= 4; i++) {
+        const image = document.querySelector(`img.day${i}`);
+        image.src = icons[data.daily[i].weather[0].icon]
+    }
+}
+
+const weatherData = (data) => {
+
+    // Current weather:
+    const weatherNow = {
+        Descr: data.current.weather[0].description,
+        Temp: `${Math.floor(data.current.temp)}°C`,
+    }
+
+    const h2Temp = document.querySelector(".temp");
+    h2Temp.innerHTML = weatherNow.Temp;
+
+    const pDescr = document.querySelector(".descr");
+    pDescr.innerHTML = weatherNow.Descr;
 
     // Next five days:
     const fiveDays = document.querySelector(".weatherfivedays");
@@ -84,10 +92,6 @@ const weatherData = (data) => {
         dayTemp.innerHTML = `${Math.floor(data.daily[i].temp.day)}°C`;
         const dayDescr = document.querySelector(`p.day${i}descr`);
         dayDescr.innerHTML = data.daily[i].weather[0].description;
-
-        // Add weather icons future days
-        const image = document.querySelector(`img.day${i}`);
-        image.src = icons[data.daily[i].weather[0].icon];
 
         // Add data on card hover
         const spanRaindrop = document.querySelector(`span.raindrop.day${i}`);
@@ -132,6 +136,7 @@ const secondApi = (data) => {
     const getData = fetch(`https://api.openweathermap.org/data/2.5/onecall?lat=${lat}&lon=${lon}&exclude=minutely,hourly,alerts&appid=${config.apiKey}&units=metric`)
         .then(response => response.json())
         .then(data => {
+            weatherIcons(data);
             weatherData(data);
         })
 }
