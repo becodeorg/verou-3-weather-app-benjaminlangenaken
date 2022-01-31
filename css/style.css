@@ -71,11 +71,11 @@ img {
     width: 200px; /*Keep images within container (take 100% of container width)*/
 }
 
+img.day0,
 img.day1,
 img.day2,
 img.day3,
-img.day4,
-img.day5 {
+img.day4 {
     width: 100px;
 }
 
@@ -89,11 +89,11 @@ img.day5 {
     overflow: hidden;
 }
 
+.flex.day0,
 .flex.day1,
 .flex.day2,
 .flex.day3,
-.flex.day4,
-.flex.day5 {
+.flex.day4 {
     width: 17vw;
     height: 250px;
     background-color: var(--secondary-color);
@@ -121,11 +121,11 @@ img.day5 {
     text-align: center;
 }
 
+.flex.day0:hover,
 .flex.day1:hover,
 .flex.day2:hover,
 .flex.day3:hover,
-.flex.day4:hover,
-.flex.day5:hover {
+.flex.day4:hover {
     animation: cardEffect 0.6s forwards;
 }
 
@@ -140,11 +140,11 @@ img.day5 {
     }
 }
 
+.flex.day0:hover .hover,
 .flex.day1:hover .hover,
 .flex.day2:hover .hover,
 .flex.day3:hover .hover,
-.flex.day4:hover .hover,
-.flex.day5:hover .hover {
+.flex.day4:hover .hover {
     animation: hoverEffect 1s forwards;
 }
 
@@ -259,11 +259,11 @@ span.sunset {
         margin: 15px 5px;
     }
 
+    .flex.day0,
     .flex.day1,
     .flex.day2,
     .flex.day3,
-    .flex.day4,
-    .flex.day5 {
+    .flex.day4 {
         width: 80vw;
         height: auto;
         display: grid;
@@ -278,7 +278,7 @@ span.sunset {
         border-radius: 0px;
     }
 
-    .flex.day5 {
+    .flex.day4 {
         border-bottom: none;
     }
 
@@ -309,11 +309,11 @@ span.sunset {
         width: 30vw;
     }
 
+    img.day0,
     img.day1,
     img.day2,
     img.day3,
-    img.day4,
-    img.day5 {
+    img.day4 {
         width: 15vw;
     }
 
@@ -351,19 +351,19 @@ span.sunset {
         display: none;
     }
 
+    .flex.day0:hover,
     .flex.day1:hover,
     .flex.day2:hover,
     .flex.day3:hover,
-    .flex.day4:hover,
-    .flex.day5:hover {
+    .flex.day4:hover {
         animation:1;
     }
 
+    .flex.day0:hover .hover,
     .flex.day1:hover .hover,
     .flex.day2:hover .hover,
     .flex.day3:hover .hover,
-    .flex.day4:hover .hover,
-    .flex.day5:hover .hover {
+    .flex.day4:hover .hover {
         animation: none;
     }
 }
